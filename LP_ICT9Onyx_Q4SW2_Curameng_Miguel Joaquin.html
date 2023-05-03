@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Q4 Seatwork 2</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body class="bg-warning">
+<p id="today"></p>
+
+<script>
+const date = new Date();
+document.getElementById("today").innerHTML = date;
+</script>
+
+<p>
+  <label>Fahrenheit</label>
+  <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+</p>
+<p>Celcius: <span id="outputCelcius"></span></p>
+
+<script>
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+}
+</script>
+<button type="convert" class="btn btn-primary mb-2">Convert</button>
+  <table>
+  <tr>
+    <th>Celsius</th>
+    <th>Fahrenheit</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>-273.15</td>
+    <td>-459.67 -</td>
+    <td>Absolute zero temperature</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>32.0</td>
+    <td>Freezing/melting point of water</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>69.8</td>
+    <td>Room temperature</td>
+  </tr>
+  <tr>
+    <td>37</td>
+    <td>98.6</td>
+    <td>Average body temperature</td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>212.0</td>
+    <td>Boiling point of water</td>
+  </tr>
+</table>
+</body>
+</html>
